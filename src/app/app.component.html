@@ -1,0 +1,13 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>{{rootPage.title}}</ion-title>
+		<ion-buttons end>
+			<button ion-button (click)="setPage(pages.Home)">Menu</button>
+			<button ion-button (click)="setPage(pages.Admin)">Admin</button>
+			<button ion-button (click)="setPage(pages.Orders)">Orders</button>
+			<button ion-button (click)="setPage(pages.Kitchen)">Kitchen</button>
+			<button ion-button (click)="setPage(pages.Dispatch)">Dispatch</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+<ion-nav [root]="rootPage"></ion-nav>

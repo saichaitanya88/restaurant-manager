@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar></ion-navbar>
+    <ion-title></ion-title>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-33 *ngFor="let table of tablesWithOrders" class="text-center">
+                <ion-card>
+                    <ion-title>Table: {{table.id}}</ion-title>
+                    <ion-row *ngFor="let order of table.orders">
+                        <ion-col width-50>
+                            {{ order.name }}
+                        </ion-col>
+                        <ion-col width-50>
+                            <span *ngIf="!order.isComplete">{{ getTimeAgo(order.time) }}</span>
+                        </ion-col>
+                        <ion-col width-100>
+                            <b>{{order.notes}}</b>
+                        </ion-col>
+                        <ion-col width-50>
+                            <button *ngIf="!order.isComplete" (click)="completeOrder(order)" ion-button small>Done</button>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

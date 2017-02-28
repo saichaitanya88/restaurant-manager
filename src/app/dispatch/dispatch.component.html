@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar></ion-navbar>
+    <ion-title></ion-title>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-33 *ngFor="let delivery of dispatchService.deliveries; let i = index;" class="text-center">
+                <ion-card>
+                    <ion-title>Delivery: {{i+1}}</ion-title>
+                    <span>{{ getTimeAgo(delivery.time) }}</span>
+                    <ion-row *ngFor="let order of delivery.orders">
+                        <ion-col width-50>
+                            {{ order.name }}
+                        </ion-col>
+                        <ion-col width-100>
+                            <b>{{order.notes}}</b>
+                        </ion-col>
+                    </ion-row>
+                    <button (click)="completeDelivery(delivery)" ion-button small>Complete</button>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

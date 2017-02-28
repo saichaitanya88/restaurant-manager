@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar></ion-navbar>
+    <ion-title></ion-title>
+</ion-header>
+<ion-content>
+    <ion-grid *ngIf="!selectedTable">
+        <ion-row>
+            <ion-col width-33 *ngFor="let table of tablesService.tables; let i = index;" class="text-center">
+                <button class="table-button" ion-button (click)="selectedTable = table">{{i+1}}</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="selectedTable">
+        <ion-row>
+            <ion-col>
+                <button class="right" ion-button (click)="selectedTable = null">Go Back</button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <order-editor-component [table]="selectedTable"></order-editor-component>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

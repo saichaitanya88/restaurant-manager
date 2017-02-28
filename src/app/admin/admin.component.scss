@@ -1,0 +1,10 @@
+.tabs { 
+    margin-top: 10px;
+}
+.tab {
+    cursor: pointer;
+}
+
+.tab.active{
+    font-weight: bold;
+}

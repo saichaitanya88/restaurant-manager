@@ -1,0 +1,9 @@
+<ion-grid>
+    <ion-row *ngFor="let y of tablesY">
+        <ion-col *ngFor="let x of tablesX" style="text-align: center;">
+            <button ion-button>
+                Table {{tables[x][y]}}
+            </button>
+        </ion-col>
+    </ion-row>
+</ion-grid>

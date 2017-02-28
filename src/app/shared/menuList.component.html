@@ -1,0 +1,15 @@
+<template ngFor let-category [ngForOf]="categories">
+    <h4 class="center"><i>{{category.name}}</i></h4>
+    <ion-grid *ngFor="let item of category.items">
+        <ion-row>
+            <ion-col width-33>
+                <strong>{{item.name}}</strong> - <strong>{{item.price}}</strong>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-100>
+                <i>{{ item.description }}</i>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</template>

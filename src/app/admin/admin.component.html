@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar></ion-navbar>
+    <ion-title></ion-title>
+</ion-header>
+<ion-content>
+    <div class="col s12" *ngIf="tab == Tabs.Dashboard">
+        <ion-grid>
+            <ion-row>
+                <ion-col width-33>
+                    <div #pieChart id="pieChart"></div>
+                </ion-col>
+                <ion-col width-66>
+                    <div #barChart id="barChart"></div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

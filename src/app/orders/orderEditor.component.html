@@ -1,0 +1,78 @@
+<ion-grid>
+    <ion-row>
+        <ion-col width-75>
+            <div *ngFor="let order of table.orders">
+                <ion-row>
+                    <ion-col width-100>
+                        <strong>{{order.name}}</strong>
+                        <button ion-button small class="right" (click)="removeOrder(order)">x</button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100>
+                        <ion-textarea class="editor-order-notes" [(ngModel)]="order.notes"></ion-textarea>
+                    </ion-col>                    
+                </ion-row>
+            </div>
+        </ion-col>
+        <ion-col>
+            <ion-grid class="keypad">
+                <ion-row>
+                    <ion-col end>
+                        &nbsp;
+                        {{code}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>1</button>
+                    </ion-col>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>2</button>
+                    </ion-col>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>3</button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>4</button>
+                    </ion-col>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>5</button>
+                    </ion-col>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>6</button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>7</button>
+                    </ion-col>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>8</button>
+                    </ion-col>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>9</button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <button (click)="clearCode()" ion-button>x</button>
+                    </ion-col>
+                    <ion-col>
+                        <button (click)="addKey($event)" ion-button>0</button>
+                    </ion-col>
+                    <ion-col>
+                        <button (click)="onAddItem()" ion-button>+</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="table.orders.length > 0">
+        <ion-col>
+            <button (click)="billOrder()" ion-button>Bill Order</button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
